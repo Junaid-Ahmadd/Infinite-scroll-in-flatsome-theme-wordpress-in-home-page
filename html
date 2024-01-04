@@ -1,0 +1,41 @@
+ 
+ 
+ <!-- This div is present on another page which contains items that we want to show on our desire page
+let say its page url is : /page2
+-->
+<div class="to_be_fetched"> <!--we will fetch this div including its childs -->
+
+  <div> product 1</div>
+  <div> product 2</div>
+  <div> product 3</div>
+  
+</div>
+
+/* 
+   html where we want to implement our infinite scroll
+*/
+
+<div class="parent">
+
+ <div class="child">
+
+   <div> already present div</div>
+   <div> already present div</div>
+   <div> already present div</div>
+
+  </div>
+
+  /* New Html which will be added with javascript*/
+  <div class="container">
+     <nav class="woocommerce-pagination" style="display: none;">
+      <a class="page-number" href=" /page2 ">2</a>
+     </nav>
+  </div>
+
+  <div class="page-load-status_peptides" style="display: none;">
+    <div class="loader-spinner infinite-scroll-request text-center" style="display: none;">
+    <div class="loading-spin"></div>
+    </div>
+  </div>
+
+</div>
