@@ -1,0 +1,41 @@
+jQuery(document).ready(function() {
+
+    // Get the parent div where we will add our products or posts
+  var parentDiv = jQuery('.parent');
+  
+    // Here will be add new html element important for infinite scroll
+    var htmlToAdd = `
+      <div class="container">
+        <nav class="woocommerce-pagination" style="display: none;">
+         <a class="page-number" href="/page2">2</a>
+        </nav>
+      </div>
+      <div class="page-load-status" style="display: none;">
+        <div class="loader-spinner infinite-scroll-request text-center" style="display: none;">
+          <div class="loading-spin"></div>
+        </div>
+      </div>
+    `;
+    // Add the HTML content to the parent div
+    parent.append(htmlToAdd);
+    
+  
+    
+    // we are going to append our items in this child div
+     var container = jQuery('.child')
+
+     var paginationNext = 'a.page-number' // this class "page-number" contains the url as you can see in the html 
+  
+    
+  
+  
+    var $container = container.infiniteScroll({
+      path: paginationNext,
+      append: '.to_be_fetched',
+      checkLastPage: true,
+      history: true,
+      status: '.page-load-status',
+    
+      scrollThreshold: parseInt(flatsome_infinite_scroll.scroll_threshold)
+    })
+})
